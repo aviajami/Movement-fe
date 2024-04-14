@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success" (click)="onNewUserClick()">New user</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <form #usersPageForm="ngForm" (ngSubmit)="onSubmit(usersPageForm)">
+            <div class="form-group">
+              <label for="page">Page</label>
+              <input type="number"
+                     id="page"
+                     class="form-control"
+                     ngModel
+                     name="page"
+                     >
+            </div>          
+            <div>
+              <button class="btn btn-primary"
+                      type="submit"
+                      [disabled]="!usersPageForm.valid"
+               >Search</button>
+            </div>
+            </form>            
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12" *ngIf="users.length > 0">        
+        <app-user-item
+            *ngFor="let item of users let i = index"
+             [user]="item"
+             [index]="i">
+        </app-user-item>
+    </div>
+    <div class="col-xs-12" *ngIf="users.length == 0">        
+       <h3>No Data</h3>
+    </div>
+</div>

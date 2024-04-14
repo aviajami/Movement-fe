@@ -1,0 +1,10 @@
+label {
+    margin-right: 15px;
+}
+
+input.ng-touched.ng-invalid{
+  
+    border-width: 2px;
+    border-color: red;
+    border-radius: 1px;
+  }

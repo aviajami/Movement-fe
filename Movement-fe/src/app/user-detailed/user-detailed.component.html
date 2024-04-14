@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">       
+      </div>
+      <div class="form-group" >
+        <form [formGroup]="myForm">
+          <div class="form-control">
+            <label for="firstName">First Name</label>
+            <input type="text" formControlName="firstName">
+          </div>
+          <div class="form-control">
+            <label for="firstName">Last Name</label>
+            <input type="text" formControlName="lastName">
+          </div>
+          <div class="form-control">
+            <label for="firstName">Email</label>
+            <input type="text" formControlName="email">
+          </div>
+          <div class="form-control">
+            <label for="firstName">Avatar</label>
+            <input type="text" formControlName="avatar">
+            
+          </div>
+          <div class="form-control">
+            
+          <button class="btn btn-success" type="button" [disabled]="myForm.invalid" (click)="updateUser($event)"> Edit </button>
+            <span></span>            
+          <button class="btn btn-danger" type="button" [disabled]="myForm.invalid"  (click)="deleteUser($event)"> Delete </button>          
+            
+        </div>
+        </form>        
+      </div>
+    </div>
+      <span >
+        <img [src]="myForm.value.avatar" alt="{{myForm.value.firstName.value}}" class='img-responsive' style='max-height: 50px;'>
+    </span>
+  </div>

@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">       
+      </div>
+      <div class="form-group" >
+        <form [formGroup]="myForm" (ngSubmit)="createUser($event)">
+          <div class="form-control">
+            <label for="firstName">First Name</label>
+            <input type="text" formControlName="firstName">
+          </div>
+          <div class="form-control">
+            <label for="lastName">Last Name</label>
+            <input type="text" formControlName="lastName">
+          </div>
+          <div class="form-control">
+            <label for="email">Email</label>
+            <input type="text" formControlName="email">
+          </div>
+          <div class="form-control">
+            <label for="avatar">Avatar</label>
+            <input type="text" formControlName="avatar">
+            
+          </div>
+          <div class="form-control">
+            
+          <button class="btn btn-success" type="submit" [disabled]="myForm.invalid"> Create </button>                      
+            
+        </div>
+        </form>        
+      </div>
+      <span >
+        <img [src]="myForm.value.avatar" alt="{{myForm.value.firstName.value}}" class='img-responsive' style='max-height: 50px;'>
+    </span>
+    </div>
+    <div *ngIf="message != ''">
+        <h2>{{message}}</h2>
+    </div>
+  </div>

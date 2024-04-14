@@ -1,0 +1,14 @@
+.container {
+    margin-top: 30px;
+  }
+  
+  input.ng-touched.ng-invalid{
+  
+    border-width: 2px;
+    border-color: red;
+    border-radius: 1px;
+  }
+
+  label {
+    margin-right: 15px;
+  }
